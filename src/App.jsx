@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import {
   MapPin, Clock, Phone, Mail, Menu, X, Star, Quote,
   Calendar, Users, HeartPulse, Shield, Award, CheckCircle,
-  ArrowRight, Facebook, Instagram, Linkedin, Youtube,
+  ArrowRight, Facebook, Instagram, Youtube,
   Stethoscope, Smile, Baby, Sparkles, CircleDot, Target,
   Eye, Heart, Lightbulb, Handshake, ShieldCheck
 } from 'lucide-react'
@@ -80,12 +80,14 @@ function App() {
               <div className="header-top-right">
                 <div className="header-top-item">
                   <Phone size={16} />
-                  <a href="tel:697935323">697 93 53 23</a>
+                  <a href="tel:+34625766371">625 766 371</a>
                 </div>
                 <div className="social-links">
-                  <a href="#" aria-label="Facebook"><Facebook size={16} /></a>
-                  <a href="#" aria-label="Instagram"><Instagram size={16} /></a>
-                  <a href="#" aria-label="LinkedIn"><Linkedin size={16} /></a>
+                  <a href="https://www.facebook.com/bernaldentalclinic/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={16} /></a>
+                  <a href="https://www.instagram.com/bernal_dental_clinic/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={16} /></a>
+                  <a href="https://www.google.com/search?q=bernaldentalclinic" target="_blank" rel="noopener noreferrer" aria-label="Google" className="google-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                  </a>
                 </div>
               </div>
             </div>
@@ -235,7 +237,7 @@ function App() {
             {[
               { icon: Calendar, title: 'Pedir Cita', desc: 'Reserva tu visita gratuita' },
               { icon: Users, title: 'Equipo Experto', desc: 'Profesionales cualificados' },
-              { icon: Phone, title: 'Urgencias', desc: '697 93 53 23' },
+              { icon: Phone, title: 'Urgencias', desc: '625 766 371' },
               { icon: HeartPulse, title: 'Atención Cercana', desc: 'Trato personalizado' },
             ].map((item, index) => (
               <motion.div key={index} className="quick-service-card" variants={fadeInUp}>
@@ -589,7 +591,7 @@ function App() {
                   </div>
                   <div className="appointment-info-item">
                     <Phone size={20} />
-                    <span>697 93 53 23</span>
+                    <span>625 766 371</span>
                   </div>
                   <div className="appointment-info-item">
                     <Mail size={20} />
@@ -664,8 +666,8 @@ function App() {
               <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="btn btn-green">
                 Pedir Cita Ahora <ArrowRight size={18} />
               </a>
-              <a href="tel:697935323" className="btn btn-secondary">
-                <Phone size={18} /> Llamar: 697 93 53 23
+              <a href="tel:+34625766371" className="btn btn-secondary">
+                <Phone size={18} /> Llamar: 625 766 371
               </a>
             </div>
           </motion.div>
@@ -682,10 +684,11 @@ function App() {
                 de la salud bucal de nuestros pacientes con un trato cercano y profesional.
               </p>
               <div className="footer-social">
-                <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
-                <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
-                <a href="#" aria-label="LinkedIn"><Linkedin size={18} /></a>
-                <a href="#" aria-label="YouTube"><Youtube size={18} /></a>
+                <a href="https://www.facebook.com/bernaldentalclinic/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={18} /></a>
+                <a href="https://www.instagram.com/bernal_dental_clinic/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={18} /></a>
+                <a href="https://www.google.com/search?q=bernaldentalclinic" target="_blank" rel="noopener noreferrer" aria-label="Google" className="google-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                </a>
               </div>
             </div>
             <div className="footer-column">
@@ -715,7 +718,7 @@ function App() {
               </div>
               <div className="footer-contact-item">
                 <Phone size={18} />
-                <span>697 93 53 23</span>
+                <span>625 766 371</span>
               </div>
               <div className="footer-contact-item">
                 <Mail size={18} />
