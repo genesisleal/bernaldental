@@ -570,7 +570,7 @@ function App() {
         </div>
       </section>
 
-      <section className="appointment section-padding">
+      <section className="appointment section-padding" style={{ display: 'none' }}>
         <div className="container">
           <div className="appointment-content">
             <div className="appointment-image">
@@ -645,7 +645,7 @@ function App() {
         </div>
       </section>
 
-      <section className="cta section-padding">
+      <section id="contacto" className="cta section-padding">
         <div className="container">
           <motion.div
             className="cta-content"
@@ -674,7 +674,7 @@ function App() {
         </div>
       </section>
 
-      <footer id="contacto" className="footer">
+      <footer className="footer">
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
@@ -737,6 +737,7 @@ function App() {
               <a href="#">Política de Privacidad</a>
               <a href="#">Política de Cookies</a>
             </div>
+            <p className="footer-credits">Desarrollado por <a href="https://enigmasac.com" target="_blank" rel="noopener noreferrer">Enigma Developers</a></p>
           </div>
         </div>
       </footer>
