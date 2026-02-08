@@ -1424,8 +1424,7 @@
   }
 
   .philosophy-image {
-    position: relative;
-    top: 0;
+    display: none;
   }
 
   .doctor-profile {

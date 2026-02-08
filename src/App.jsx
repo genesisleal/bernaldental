@@ -102,9 +102,9 @@ function App() {
               <nav>
                 <ul className="nav-menu">
                   <li><a href="#inicio">Inicio</a></li>
+                  <li><a href="#servicios">Especialidades</a></li>
                   <li><a href="#filosofia">Filosofía</a></li>
                   <li><a href="#equipo">Equipo</a></li>
-                  <li><a href="#servicios">Especialidades</a></li>
                   <li><a href="#testimonios">Testimonios</a></li>
                   <li><a href="#contacto">Contacto</a></li>
                 </ul>
@@ -131,9 +131,9 @@ function App() {
         </div>
         <ul className="mobile-nav">
           <li><a href="#inicio" onClick={() => setMobileMenuOpen(false)}>Inicio</a></li>
+          <li><a href="#servicios" onClick={() => setMobileMenuOpen(false)}>Especialidades</a></li>
           <li><a href="#filosofia" onClick={() => setMobileMenuOpen(false)}>Filosofía</a></li>
           <li><a href="#equipo" onClick={() => setMobileMenuOpen(false)}>Equipo</a></li>
-          <li><a href="#servicios" onClick={() => setMobileMenuOpen(false)}>Especialidades</a></li>
           <li><a href="#testimonios" onClick={() => setMobileMenuOpen(false)}>Testimonios</a></li>
           <li><a href="#contacto" onClick={() => setMobileMenuOpen(false)}>Contacto</a></li>
         </ul>
@@ -336,7 +336,7 @@ function App() {
                 y la tecnología más avanzada.
               </p>
             </div>
-            <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ display: 'none' }}>
               Ver Todos los Servicios <ArrowRight size={18} />
             </a>
           </div>
@@ -354,7 +354,7 @@ function App() {
                 </div>
                 <h4>{service.title}</h4>
                 <p>{service.description}</p>
-                <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="service-link">
+                <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="service-link" style={{ display: 'none' }}>
                   Más información <ArrowRight size={16} />
                 </a>
               </motion.div>
