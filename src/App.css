@@ -1318,6 +1318,10 @@
     display: none;
   }
 
+  .header-main {
+    overflow: hidden;
+  }
+
   .nav-menu,
   .header-cta .btn {
     display: none;
@@ -1328,13 +1332,29 @@
   }
 
   .hero {
-    padding-top: 100px;
+    padding-top: 80px;
     min-height: auto;
-    padding-bottom: 120px;
+    padding-bottom: 60px;
+    overflow: hidden;
   }
 
   .hero-buttons {
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hero-stats {
+    gap: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
   }
 
   .quick-services-grid,
@@ -1349,9 +1369,39 @@
     gap: 1rem;
   }
 
+  .mutua-card {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .mutua-logo-wrapper {
+    width: 72px;
+    height: 72px;
+  }
+
   .quick-services {
     margin-top: 0;
     padding: 2rem 0;
+  }
+
+  .about-images {
+    overflow: hidden;
+    padding: 1.5rem;
+  }
+
+  .about-image-secondary {
+    right: 0;
+    bottom: -10px;
+    width: 140px;
+  }
+
+  .about-experience-badge {
+    left: 0;
+    top: 0;
+    padding: 1rem;
+  }
+
+  .about-experience-badge h3 {
+    font-size: 1.75rem;
   }
 
   .about-features {
@@ -1369,8 +1419,39 @@
   }
 
   .doctor-image {
-    max-width: 300px;
+    max-width: 280px;
     margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .doctor-image > div {
+    position: static !important;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  .testimonials {
+    padding: 4rem 0;
+  }
+
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .appointment-content {
+    border-radius: var(--radius-lg);
+  }
+
+  .appointment-overlay {
+    padding: 2rem 1.5rem;
+  }
+
+  .appointment-overlay h3 {
+    font-size: 1.5rem;
+  }
+
+  .appointment-form {
+    padding: 2rem 1.5rem;
   }
 
   .form-grid {
@@ -1379,6 +1460,20 @@
 
   .form-group.full {
     grid-column: span 1;
+  }
+
+  .cta-content .section-title {
+    font-size: 1.75rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
   }
 
   .footer-grid {
@@ -1394,6 +1489,11 @@
 
   .footer-social {
     justify-content: center;
+  }
+
+  .footer-contact-item {
+    justify-content: center;
+    text-align: left;
   }
 
   .footer-bottom {

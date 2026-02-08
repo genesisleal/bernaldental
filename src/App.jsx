@@ -49,16 +49,16 @@ function App() {
   ]
 
   const mutuas = [
-    { name: 'Active Seguros', logo: '/mutuas/activeseguros_gestion-150x150.png' },
-    { name: 'Allianz', logo: '/mutuas/allianz_gestion-150x150.png' },
-    { name: 'Dentista de Empresa', logo: '/mutuas/dentistadeempresa_gestion-150x150.png' },
-    { name: 'Preventiva', logo: '/mutuas/preventiva_logo_p-1-150x150.png' },
-    { name: 'Hogar Dental', logo: '/mutuas/hogardental_gestion-150x150.png' },
-    { name: 'Legalitas Salud', logo: '/mutuas/legalitas_salud_gestion-150x150.png' },
-    { name: 'Ocaso', logo: '/mutuas/ocaso_logo-150x150.png' },
-    { name: 'Servibucal', logo: '/mutuas/servibucal-gestion-150x150.png' },
-    { name: 'Prebal', logo: '/mutuas/prebal-gestion-150x150.png' },
-    { name: 'Smart Dental', logo: '/mutuas/smartdental_gestion-150x150.png' },
+    { name: 'Active Seguros', logo: '/mutuas/active.png' },
+    { name: 'Allianz', logo: '/mutuas/allianz.png' },
+    { name: 'Dentista de Empresa', logo: '/mutuas/dentista-de-empresa.png' },
+    { name: 'Preventiva', logo: '/mutuas/preventiva.png' },
+    { name: 'Hogar Dental', logo: '/mutuas/hogardental.png' },
+    { name: 'Legalitas Salud', logo: '/mutuas/legalitas-salud.png' },
+    { name: 'Ocaso', logo: '/mutuas/ocaso.png' },
+    { name: 'Servibucal', logo: '/mutuas/servibucal.png' },
+    { name: 'Prebal', logo: '/mutuas/prebal.png' },
+    { name: 'Smart Dental', logo: '/mutuas/smartdental.png' },
   ]
 
   return (
