@@ -678,7 +678,7 @@ function App() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <img src="/logo.png" alt="Bernal Dental Clinic" />
+              <img src="/logo-blanco.png" alt="Bernal Dental Clinic" className="footer-logo" />
               <p>
                 Clínica dental de confianza en Barcelona. Más de 15 años cuidando
                 de la salud bucal de nuestros pacientes con un trato cercano y profesional.
