@@ -1,0 +1,744 @@
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import {
+  MapPin, Clock, Phone, Mail, Menu, X, Star, Quote,
+  Calendar, Users, HeartPulse, Shield, Award, CheckCircle,
+  ArrowRight, Facebook, Instagram, Linkedin, Youtube,
+  Stethoscope, Smile, Baby, Sparkles, CircleDot, Target,
+  Eye, Heart, Lightbulb, Handshake, ShieldCheck
+} from 'lucide-react'
+import './App.css'
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+}
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+}
+
+function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const services = [
+    { icon: Stethoscope, title: 'Odontología General', description: 'Cuidado integral de tu salud bucal con tratamientos preventivos y conservadores para mantener tu sonrisa sana.' },
+    { icon: CircleDot, title: 'Ortodoncia', description: 'Corregimos la posición de tus dientes con las técnicas más avanzadas, incluyendo ortodoncia invisible.' },
+    { icon: Baby, title: 'Ortodoncia Infantil', description: 'Tratamientos especializados para los más pequeños, cuidando su desarrollo dental desde temprana edad.' },
+    { icon: Sparkles, title: 'Estética Dental', description: 'Carillas dentales y blanqueamiento para conseguir la sonrisa perfecta que siempre has deseado.' },
+    { icon: Target, title: 'Implantes Dentales', description: 'Recupera la funcionalidad y estética de tu sonrisa con implantes de última generación.' },
+    { icon: HeartPulse, title: 'Otras Especialidades', description: 'Contamos con especialistas en todas las áreas de la odontología para ofrecerte el mejor tratamiento.' },
+  ]
+
+  const philosophy = [
+    { icon: Heart, title: 'Nuestra Filosofía', text: 'Nuestra filosofía nace de los más de 15 años de experiencia en odontología general y ortodoncia de la Dra. Yeimi Bernal, que siempre ha buscado la solución más adecuada para cada uno de sus pacientes, ofreciéndoles y aconsejándoles el tratamiento más conveniente.' },
+    { icon: Target, title: 'Nuestra Misión', text: 'Ofrecemos un trato cercano y directo con los pacientes, cumpliendo con sus necesidades, solucionando sus problemas actuales y previniendo futuros con resultados profesionales. Contamos con los mejores especialistas y ofrecemos el mejor servicio al mejor precio.' },
+    { icon: Eye, title: 'Nuestra Visión', text: 'Ser referentes como clínica de confianza, cercana a la comunidad, transparente y clara, con precios competitivos y facilidades de pago, y con especialistas en constante formación.' },
+    { icon: Lightbulb, title: 'Así Trabajamos', text: 'Desde la primera visita se realiza una valoración profesional para evaluar y comprender cada caso y derivar al especialista correspondiente. Los pacientes tienen accesibilidad directa a nuestros doctores para comprender las necesidades de su caso.' },
+  ]
+
+  const testimonials = [
+    { name: 'Guiño Ro', text: 'Es una Clínica de ensueño, el lugar donde perdí el miedo al dentista. El trato es excepcional y muy profesional.', rating: 5 },
+    { name: 'María García', text: 'La Dra. Yeimi es increíble. Me explicó todo el tratamiento con detalle y siempre con una sonrisa. Muy recomendable.', rating: 5 },
+    { name: 'Carlos Martínez', text: 'Después de años buscando un buen dentista, encontré a Bernal Dental Clinic. Trato cercano y resultados excelentes.', rating: 5 },
+  ]
+
+  const mutuas = [
+    { name: 'Active Seguros', logo: '/mutuas/activeseguros_gestion-150x150.png' },
+    { name: 'Allianz', logo: '/mutuas/allianz_gestion-150x150.png' },
+    { name: 'Dentista de Empresa', logo: '/mutuas/dentistadeempresa_gestion-150x150.png' },
+    { name: 'Preventiva', logo: '/mutuas/preventiva_logo_p-1-150x150.png' },
+    { name: 'Hogar Dental', logo: '/mutuas/hogardental_gestion-150x150.png' },
+    { name: 'Legalitas Salud', logo: '/mutuas/legalitas_salud_gestion-150x150.png' },
+    { name: 'Ocaso', logo: '/mutuas/ocaso_logo-150x150.png' },
+    { name: 'Servibucal', logo: '/mutuas/servibucal-gestion-150x150.png' },
+    { name: 'Prebal', logo: '/mutuas/prebal-gestion-150x150.png' },
+    { name: 'Smart Dental', logo: '/mutuas/smartdental_gestion-150x150.png' },
+  ]
+
+  return (
+    <>
+      <header className="header">
+        <div className="header-top">
+          <div className="container">
+            <div className="header-top-content">
+              <div className="header-top-left">
+                <div className="header-top-item">
+                  <MapPin size={16} />
+                  <span>Passatge de Montserrat de Andrés 11, 08014 Barcelona</span>
+                </div>
+                <div className="header-top-item">
+                  <Clock size={16} />
+                  <span>Lun-Jue: 10:00-14:00 / 15:00-20:00 | Vie: 10:00-14:00</span>
+                </div>
+              </div>
+              <div className="header-top-right">
+                <div className="header-top-item">
+                  <Phone size={16} />
+                  <a href="tel:697935323">697 93 53 23</a>
+                </div>
+                <div className="social-links">
+                  <a href="#" aria-label="Facebook"><Facebook size={16} /></a>
+                  <a href="#" aria-label="Instagram"><Instagram size={16} /></a>
+                  <a href="#" aria-label="LinkedIn"><Linkedin size={16} /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="header-main">
+          <div className="container">
+            <div className="header-main-content">
+              <a href="#" className="logo">
+                <img src="/logo.png" alt="Bernal Dental Clinic" />
+              </a>
+              <nav>
+                <ul className="nav-menu">
+                  <li><a href="#inicio">Inicio</a></li>
+                  <li><a href="#filosofia">Filosofía</a></li>
+                  <li><a href="#equipo">Equipo</a></li>
+                  <li><a href="#servicios">Especialidades</a></li>
+                  <li><a href="#testimonios">Testimonios</a></li>
+                  <li><a href="#contacto">Contacto</a></li>
+                </ul>
+              </nav>
+              <div className="header-cta">
+                <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                  Pedir Cita
+                </a>
+                <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(true)}>
+                  <Menu />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-header">
+          <img src="/logo.png" alt="Bernal Dental Clinic" style={{ height: '40px' }} />
+          <button className="mobile-menu-close" onClick={() => setMobileMenuOpen(false)}>
+            <X />
+          </button>
+        </div>
+        <ul className="mobile-nav">
+          <li><a href="#inicio" onClick={() => setMobileMenuOpen(false)}>Inicio</a></li>
+          <li><a href="#filosofia" onClick={() => setMobileMenuOpen(false)}>Filosofía</a></li>
+          <li><a href="#equipo" onClick={() => setMobileMenuOpen(false)}>Equipo</a></li>
+          <li><a href="#servicios" onClick={() => setMobileMenuOpen(false)}>Especialidades</a></li>
+          <li><a href="#testimonios" onClick={() => setMobileMenuOpen(false)}>Testimonios</a></li>
+          <li><a href="#contacto" onClick={() => setMobileMenuOpen(false)}>Contacto</a></li>
+        </ul>
+        <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ marginTop: '2rem', width: '100%' }}>
+          Pedir Cita
+        </a>
+      </div>
+
+      <section id="inicio" className="hero">
+        <div className="container">
+          <motion.div
+            className="hero-content"
+            initial="initial"
+            animate="animate"
+            variants={staggerContainer}
+          >
+            <motion.div className="hero-text" variants={fadeInUp}>
+              <div className="hero-badge">
+                <Award size={18} />
+                Primera visita gratuita
+              </div>
+              <h1 className="hero-title">
+                Tu sonrisa, <br />
+                nuestra <span>prioridad</span>
+              </h1>
+              <p className="hero-description">
+                En Bernal Dental Clinic cuidamos de tu salud bucal con un trato cercano y profesional.
+                Más de 15 años de experiencia nos avalan. Confía, sonríe.
+              </p>
+              <div className="hero-buttons">
+                <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="btn btn-green">
+                  Pedir Cita Gratis <ArrowRight size={18} />
+                </a>
+                <a href="#servicios" className="btn btn-secondary">
+                  Nuestros Servicios
+                </a>
+              </div>
+              <div className="hero-stats">
+                <div className="stat-item">
+                  <div className="stat-number">15+</div>
+                  <div className="stat-label">Años de experiencia</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">2000+</div>
+                  <div className="stat-label">Pacientes felices</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">4.8</div>
+                  <div className="stat-label">Valoración Google</div>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div className="hero-image" variants={fadeInUp}>
+              <img
+                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=700&fit=crop"
+                alt="Dentista profesional"
+                className="hero-image-main"
+              />
+              <motion.div
+                className="hero-floating-card top"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+              >
+                <div className="floating-icon">
+                  <Shield size={24} />
+                </div>
+                <div className="floating-text">
+                  <h4>Tratamiento seguro</h4>
+                  <p>Protocolos de higiene</p>
+                </div>
+              </motion.div>
+              <motion.div
+                className="hero-floating-card bottom"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+              >
+                <div className="floating-icon">
+                  <Smile size={24} />
+                </div>
+                <div className="floating-text">
+                  <h4>Sonrisas perfectas</h4>
+                  <p>Resultados garantizados</p>
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="quick-services">
+        <div className="container">
+          <motion.div
+            className="quick-services-grid"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            {[
+              { icon: Calendar, title: 'Pedir Cita', desc: 'Reserva tu visita gratuita' },
+              { icon: Users, title: 'Equipo Experto', desc: 'Profesionales cualificados' },
+              { icon: Phone, title: 'Urgencias', desc: '697 93 53 23' },
+              { icon: HeartPulse, title: 'Atención Cercana', desc: 'Trato personalizado' },
+            ].map((item, index) => (
+              <motion.div key={index} className="quick-service-card" variants={fadeInUp}>
+                <div className="quick-service-icon">
+                  <item.icon />
+                </div>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="about section-padding">
+        <div className="container">
+          <div className="about-content">
+            <motion.div
+              className="about-images"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=500&h=600&fit=crop"
+                alt="Clínica dental moderna"
+                className="about-image-main"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=250&h=200&fit=crop"
+                alt="Tratamiento dental"
+                className="about-image-secondary"
+              />
+              <div className="about-experience-badge">
+                <h3>15+</h3>
+                <p>Años de<br />experiencia</p>
+              </div>
+            </motion.div>
+            <motion.div
+              className="about-text"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="section-subtitle">Sobre Nosotros</span>
+              <h2 className="section-title">
+                Cuidamos de tu salud bucal con dedicación y profesionalismo
+              </h2>
+              <p>
+                En Bernal Dental Clinic, nuestra misión es proporcionar atención dental excepcional
+                con un enfoque centrado en el paciente. Estamos dedicados a mejorar la salud y el
+                bienestar de nuestra comunidad.
+              </p>
+              <p>
+                Con la Dra. Yeimi Bernal al frente, ofrecemos tratamientos personalizados con
+                tecnología de vanguardia y un equipo de especialistas expertos en cada área.
+              </p>
+              <div className="about-features">
+                <div className="about-feature">
+                  <CheckCircle size={20} />
+                  <span>Primera visita gratuita</span>
+                </div>
+                <div className="about-feature">
+                  <CheckCircle size={20} />
+                  <span>Especialistas certificados</span>
+                </div>
+                <div className="about-feature">
+                  <CheckCircle size={20} />
+                  <span>Tecnología avanzada</span>
+                </div>
+                <div className="about-feature">
+                  <CheckCircle size={20} />
+                  <span>Facilidades de pago</span>
+                </div>
+              </div>
+              <a href="#filosofia" className="btn btn-primary">
+                Conoce Nuestra Filosofía <ArrowRight size={18} />
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicios" className="services section-padding">
+        <div className="container">
+          <div className="services-header">
+            <div className="services-header-text">
+              <span className="section-subtitle">Nuestros Servicios</span>
+              <h2 className="section-title">
+                Especialidades dentales para toda la familia
+              </h2>
+              <p>
+                Ofrecemos una amplia gama de servicios dentales con los mejores especialistas
+                y la tecnología más avanzada.
+              </p>
+            </div>
+            <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              Ver Todos los Servicios <ArrowRight size={18} />
+            </a>
+          </div>
+          <motion.div
+            className="services-grid"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            {services.map((service, index) => (
+              <motion.div key={index} className="service-card" variants={fadeInUp}>
+                <div className="service-icon">
+                  <service.icon />
+                </div>
+                <h4>{service.title}</h4>
+                <p>{service.description}</p>
+                <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="service-link">
+                  Más información <ArrowRight size={16} />
+                </a>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section id="filosofia" className="philosophy section-padding">
+        <div className="container">
+          <div className="philosophy-content">
+            <motion.div
+              className="philosophy-cards"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              <div style={{ marginBottom: '2rem' }}>
+                <span className="section-subtitle">Nuestra Esencia</span>
+                <h2 className="section-title">Lo que nos define como clínica</h2>
+              </div>
+              {philosophy.map((item, index) => (
+                <motion.div key={index} className="philosophy-card" variants={fadeInUp}>
+                  <h4>
+                    <item.icon size={24} />
+                    {item.title}
+                  </h4>
+                  <p>{item.text}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+            <motion.div
+              className="philosophy-image"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=600&h=800&fit=crop"
+                alt="Filosofía de la clínica"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section id="equipo" className="team section-padding">
+        <div className="container">
+          <div className="team-header">
+            <span className="section-subtitle">Nuestro Equipo</span>
+            <h2 className="section-title">Conoce a nuestra directora</h2>
+          </div>
+          <motion.div
+            className="doctor-profile"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '4rem',
+              alignItems: 'center',
+              marginTop: '2rem'
+            }}
+          >
+            <div className="doctor-image" style={{ position: 'relative' }}>
+              <img
+                src="/yeimi.png"
+                alt="Dra. Yeimi Bernal"
+                style={{
+                  width: '100%',
+                  maxWidth: '450px',
+                  borderRadius: '1.5rem',
+                  boxShadow: '0 25px 50px -12px rgb(0 0 0 / 0.25)'
+                }}
+              />
+              <div style={{
+                position: 'absolute',
+                bottom: '-20px',
+                right: '20px',
+                background: 'var(--color-green)',
+                color: 'white',
+                padding: '1rem 1.5rem',
+                borderRadius: '1rem',
+                boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)'
+              }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: '700' }}>15+</div>
+                <div style={{ fontSize: '0.875rem' }}>años de experiencia</div>
+              </div>
+            </div>
+            <div className="doctor-info">
+              <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'var(--color-primary)' }}>
+                Dra. Yeimi Bernal
+              </h3>
+              <p style={{ color: 'var(--color-green)', fontWeight: '600', marginBottom: '1.5rem' }}>
+                Directora Médica · Especialista en Ortodoncia y Ortopedia
+              </p>
+              <p style={{ color: 'var(--color-gray-dark)', marginBottom: '1rem', lineHeight: '1.8' }}>
+                Licenciada en Odontología por la Universidad de Barcelona con más de 15 años de experiencia
+                en la especialidad de ortodoncia y ortopedia.
+              </p>
+              <p style={{
+                fontStyle: 'italic',
+                color: 'var(--color-primary)',
+                marginBottom: '1.5rem',
+                padding: '1rem',
+                background: 'var(--color-bg-light)',
+                borderLeft: '4px solid var(--color-green)',
+                borderRadius: '0 0.5rem 0.5rem 0'
+              }}>
+                "Conocer al paciente es esencial para conseguir alcanzar el resultado perfecto"
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <CheckCircle size={20} style={{ color: 'var(--color-green)' }} />
+                  <span>CEO Barcelona Dental Academy</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <CheckCircle size={20} style={{ color: 'var(--color-green)' }} />
+                  <span>Embajadora WON de Clear Correct</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <CheckCircle size={20} style={{ color: 'var(--color-green)' }} />
+                  <span>Nº Colegiado: 6627</span>
+                </div>
+              </div>
+              <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                Pedir Cita con la Dra. Bernal <ArrowRight size={18} />
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section id="testimonios" className="testimonials section-padding">
+        <div className="container">
+          <div className="testimonials-header">
+            <span className="section-subtitle">Testimonios</span>
+            <h2 className="section-title">Lo que dicen nuestros pacientes</h2>
+          </div>
+          <motion.div
+            className="testimonials-grid"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            {testimonials.map((testimonial, index) => (
+              <motion.div key={index} className="testimonial-card" variants={fadeInUp}>
+                <div className="testimonial-quote">
+                  <Quote />
+                </div>
+                <p className="testimonial-text">"{testimonial.text}"</p>
+                <div className="testimonial-author">
+                  <img
+                    src={`https://i.pravatar.cc/100?img=${index + 10}`}
+                    alt={testimonial.name}
+                  />
+                  <div className="testimonial-author-info">
+                    <h5>{testimonial.name}</h5>
+                    <p>Paciente</p>
+                    <div className="testimonial-stars">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} fill="#fbbf24" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="mutuas section-padding">
+        <div className="container">
+          <motion.div
+            className="mutuas-header"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="mutuas-header-icon">
+              <ShieldCheck size={32} />
+            </div>
+            <span className="section-subtitle" style={{ justifyContent: 'center' }}>Mutuas Dentales</span>
+            <h2 className="section-title">Trabajamos con tu mutua</h2>
+            <p>
+              Colaboramos con las principales mutuas dentales para que puedas
+              disfrutar de nuestros servicios de calidad.
+            </p>
+          </motion.div>
+          <motion.div
+            className="mutuas-grid"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            {mutuas.map((mutua, index) => (
+              <motion.div key={index} className="mutua-card" variants={fadeInUp}>
+                <div className="mutua-logo-wrapper">
+                  <img src={mutua.logo} alt={mutua.name} />
+                </div>
+                <span className="mutua-name">{mutua.name}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="appointment section-padding">
+        <div className="container">
+          <div className="appointment-content">
+            <div className="appointment-image">
+              <img
+                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&h=800&fit=crop"
+                alt="Reserva tu cita"
+              />
+              <div className="appointment-overlay">
+                <h3>Primera visita gratuita</h3>
+                <p>
+                  Incluye valoración completa y presupuesto sin compromiso.
+                  Tu salud bucal es nuestra prioridad.
+                </p>
+                <div className="appointment-info-list">
+                  <div className="appointment-info-item">
+                    <MapPin size={20} />
+                    <span>Passatge de Montserrat de Andrés 11, Barcelona</span>
+                  </div>
+                  <div className="appointment-info-item">
+                    <Phone size={20} />
+                    <span>697 93 53 23</span>
+                  </div>
+                  <div className="appointment-info-item">
+                    <Mail size={20} />
+                    <span>info@bernaldentalclinic.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="appointment-form">
+              <h3>Solicita tu cita</h3>
+              <p>Completa el formulario y nos pondremos en contacto contigo.</p>
+              <form action="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" method="get" target="_blank">
+                <div className="form-grid">
+                  <div className="form-group">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Tu nombre" />
+                  </div>
+                  <div className="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" placeholder="Tu teléfono" />
+                  </div>
+                  <div className="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Tu email" />
+                  </div>
+                  <div className="form-group">
+                    <label>Especialidad</label>
+                    <select>
+                      <option value="">Selecciona una especialidad</option>
+                      <option value="general">Odontología General</option>
+                      <option value="ortodoncia">Ortodoncia</option>
+                      <option value="ortodoncia-infantil">Ortodoncia Infantil</option>
+                      <option value="estetica">Estética Dental</option>
+                      <option value="implantes">Implantes Dentales</option>
+                      <option value="otros">Otras Especialidades</option>
+                    </select>
+                  </div>
+                  <div className="form-group full">
+                    <label>Mensaje</label>
+                    <textarea placeholder="Cuéntanos sobre tu caso..."></textarea>
+                  </div>
+                </div>
+                <div className="form-submit">
+                  <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="btn btn-green">
+                    Solicitar Cita Gratuita <ArrowRight size={18} />
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="cta section-padding">
+        <div className="container">
+          <motion.div
+            className="cta-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="section-subtitle">¿Listo para sonreír?</span>
+            <h2 className="section-title">
+              Tu primera visita es gratuita
+            </h2>
+            <p>
+              Pide tu cita en nuestra clínica dental de manera totalmente gratuita y déjate
+              recomendar por nuestro equipo de profesionales. Tu salud nos importa.
+            </p>
+            <div className="cta-buttons">
+              <a href="https://clientes.gestiondeclinica.es/30/AreaPrivada/getapp.html?cif=b67156695&idc=b87e152a-bbaa-45d5-91e4-8658c926d2fc" target="_blank" rel="noopener noreferrer" className="btn btn-green">
+                Pedir Cita Ahora <ArrowRight size={18} />
+              </a>
+              <a href="tel:697935323" className="btn btn-secondary">
+                <Phone size={18} /> Llamar: 697 93 53 23
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <footer id="contacto" className="footer">
+        <div className="container">
+          <div className="footer-grid">
+            <div className="footer-brand">
+              <img src="/logo.png" alt="Bernal Dental Clinic" />
+              <p>
+                Clínica dental de confianza en Barcelona. Más de 15 años cuidando
+                de la salud bucal de nuestros pacientes con un trato cercano y profesional.
+              </p>
+              <div className="footer-social">
+                <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
+                <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
+                <a href="#" aria-label="LinkedIn"><Linkedin size={18} /></a>
+                <a href="#" aria-label="YouTube"><Youtube size={18} /></a>
+              </div>
+            </div>
+            <div className="footer-column">
+              <h4>Navegación</h4>
+              <ul className="footer-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#filosofia">Filosofía</a></li>
+                                <li><a href="#servicios">Especialidades</a></li>
+                <li><a href="https://bernaldentalclinic.com/blog/" target="_blank" rel="noopener noreferrer">Blog</a></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h4>Especialidades</h4>
+              <ul className="footer-links">
+                <li><a href="#">Odontología General</a></li>
+                <li><a href="#">Ortodoncia</a></li>
+                <li><a href="#">Ortodoncia Infantil</a></li>
+                <li><a href="#">Estética Dental</a></li>
+                <li><a href="#">Implantes Dentales</a></li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h4>Contacto</h4>
+              <div className="footer-contact-item">
+                <MapPin size={18} />
+                <span>Passatge de Montserrat de Andrés 11, Local 2, 08014 Barcelona (Sants)</span>
+              </div>
+              <div className="footer-contact-item">
+                <Phone size={18} />
+                <span>697 93 53 23</span>
+              </div>
+              <div className="footer-contact-item">
+                <Mail size={18} />
+                <span>info@bernaldentalclinic.com</span>
+              </div>
+              <div className="footer-contact-item">
+                <Clock size={18} />
+                <span>Lun-Jue: 10:00-20:00<br />Vie: 10:00-14:00</span>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>© 2024 Bernal Dental Clinic. Todos los derechos reservados.</p>
+            <div className="footer-legal">
+              <a href="#">Aviso Legal</a>
+              <a href="#">Política de Privacidad</a>
+              <a href="#">Política de Cookies</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  )
+}
+
+export default App
