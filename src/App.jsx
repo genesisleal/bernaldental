@@ -674,6 +674,24 @@ function App() {
         </div>
       </section>
 
+      <motion.a
+        href="https://wa.me/34625766371"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-fab"
+        aria-label="Contactar por WhatsApp"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.2, type: 'spring', stiffness: 260, damping: 18 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958A15.914 15.914 0 0 0 16.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.312 22.594c-.39 1.1-1.932 2.014-3.18 2.28-.852.18-1.964.324-5.71-1.228-4.796-1.986-7.882-6.848-8.12-7.166-.23-.318-1.926-2.566-1.926-4.892s1.218-3.47 1.652-3.944c.434-.474.946-.592 1.262-.592.316 0 .632.002.908.016.292.016.682-.11 1.068.814.39.938 1.33 3.264 1.448 3.502.118.238.196.514.04.832-.158.318-.236.514-.474.792-.238.278-.5.622-.714.834-.238.238-.486.496-.21.974.278.474 1.234 2.036 2.65 3.298 1.82 1.622 3.354 2.124 3.828 2.362.474.238.752.198 1.028-.118.278-.318 1.186-1.382 1.504-1.856.316-.474.632-.394 1.068-.236.434.158 2.76 1.302 3.234 1.538.474.238.79.356.908.554.118.198.118 1.148-.272 2.252z"/>
+        </svg>
+        <span className="whatsapp-tooltip">WhatsApp</span>
+      </motion.a>
+
       <footer className="footer">
         <div className="container">
           <div className="footer-grid">
